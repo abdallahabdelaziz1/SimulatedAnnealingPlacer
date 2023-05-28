@@ -264,9 +264,11 @@ int main() {
     auto start = high_resolution_clock::now();
     
     placer(test, coolingRate);
-
-    test.close();
+    
     auto stop = high_resolution_clock::now();
+    
+    test.close();
+    
     auto duration = duration_cast<microseconds>(stop - start);
     cout << "Time taken by the program: " << duration.count() / 1e6 << " s." << endl;
 } 
